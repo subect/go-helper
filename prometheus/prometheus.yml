@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s # 抓取间隔，默认为 15 秒
+  evaluation_interval: 15s # 评估规则的间隔，默认为 15 秒
+
+scrape_configs:
+  - job_name: 'myapp' # 作业名称，用于标识此作业的抓取配置
+    static_configs:
+      - targets: ['localhost:8080'] # 目标服务器或服务的地址
+    metrics_path: /metrics # 指标端点的路径，通常为 /metrics
+    scheme: http # 使用的协议，通常为 http
